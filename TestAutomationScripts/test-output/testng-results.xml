@@ -20,12 +20,12 @@
       <![CDATA[Application Opened Opened]]>
     </line>
   </reporter-output>
-  <suite started-at="2020-12-10T10:24:15 PKT" name="Suite" finished-at="2020-12-10T10:24:36 PKT" duration-ms="21666">
+  <suite started-at="2020-12-10T13:48:38 PKT" name="Suite" finished-at="2020-12-10T13:49:01 PKT" duration-ms="22896">
     <groups>
     </groups>
-    <test started-at="2020-12-10T10:24:15 PKT" name="FireFoxTestCase" finished-at="2020-12-10T10:24:36 PKT" duration-ms="21666">
+    <test started-at="2020-12-10T13:48:38 PKT" name="FireFoxTestCase" finished-at="2020-12-10T13:49:01 PKT" duration-ms="22896">
       <class name="AutomationFrameWork.TestCases.TestCase1">
-        <test-method signature="TC1(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@6ab778a]" started-at="2020-12-10T10:24:15 PKT" name="TC1" finished-at="2020-12-10T10:24:29 PKT" duration-ms="14444" status="PASS">
+        <test-method signature="TC1(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@6ab778a]" started-at="2020-12-10T13:48:38 PKT" name="TC1" finished-at="2020-12-10T13:48:53 PKT" duration-ms="14948" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -45,7 +45,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- TC1 -->
-        <test-method signature="TC2(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@6ab778a]" started-at="2020-12-10T10:24:29 PKT" name="TC2" finished-at="2020-12-10T10:24:36 PKT" duration-ms="7196" status="PASS">
+        <test-method signature="TC2(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@6ab778a]" started-at="2020-12-10T13:48:53 PKT" name="TC2" finished-at="2020-12-10T13:49:01 PKT" duration-ms="7919" status="PASS">
           <params>
             <param index="0">
               <value>
