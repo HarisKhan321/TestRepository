@@ -1,5 +1,8 @@
 package AutomationFrameWork.SetupFiles;
 
+import static AutomationFrameWork.SetupFiles.Initilization.logger;
+import static AutomationFrameWork.SetupFiles.Initilization.report;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -24,7 +27,10 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
@@ -34,20 +40,53 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class Initilization {
 
+
 public static WebDriver driver =null;
 public static String BrowsersType;
 public static String URL;
 public static WebDriverWait wait;
-
+public static String TestCaseName;
 // extent reports
-static ExtentReports report =new ExtentReports("D:\\TestResult.html");
-static ExtentTest  logger =report.startTest("Check Browser and Application Opened");
+
+public static ExtentTest  logger;
+static public ExtentReports report;
+//static public ExtentReports report =new ExtentReports("D:\\TestResult.html",false);
+//static ExtentTest  logger  =report.startTest("Automation Scritps have been excuted");;
+
+
+
+@BeforeClass
+
+public static void BeforeClass()
+{
+
+Initilization.getExtentInstance();	}
+
+@BeforeMethod
+public static void BeforeMethod(ITestResult result )
+{
+//This  is used to read and write Test Description of Methods in extent report
+String methodNameUsingClassInstance = result.getMethod().getDescription();
+logger = report.startTest(methodNameUsingClassInstance);
+
+}
+
+
+//This method is used to set the Instance of Extent Report and its path
+public static ExtentReports getExtentInstance() {
+	 report =new ExtentReports("D:\\TestResult_" + System.currentTimeMillis() + ".html",false);
+	return report;
+}
+
+
+
+
+
 
 // Open Application
 public static void setup()
 {	 
-	//Extent report
-	
+
 	if(BrowsersType.equalsIgnoreCase("firefox"))
 	{
 	System.setProperty("webdriver.gecko.driver", "C:\\SeleniumDriverServer\\geckodriver.exe");		
@@ -60,6 +99,7 @@ public static void setup()
 	logger.log(LogStatus.PASS, "Application Opened");
 	report.endTest(logger);
 	report.flush();
+	report.close();
 	}
 
 	else if (BrowsersType.equalsIgnoreCase("chrome")) {
@@ -89,8 +129,15 @@ public static void setup()
 		//report.flush();
 			// Reporter.log("Application Opened Opened"); 
 	}
+	
+	//This is for extent report Path
 
+	//This is for Showing 
+
+	
 }
+
+
 
 
 // this method is used  to set locator type e.g ID,NAME etc and its value 

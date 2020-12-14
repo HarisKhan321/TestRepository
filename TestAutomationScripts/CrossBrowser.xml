@@ -4,6 +4,7 @@
 
   <test name="FireFoxTestCase">
   <parameter name="browsers" value="chrome"/>
+
   <classes>
   <class name ="AutomationFrameWork.TestCases.TestCase1"/>
   </classes>
