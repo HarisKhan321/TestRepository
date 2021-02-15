@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Browser Opened]]>
@@ -10,46 +10,28 @@
     <line>
       <![CDATA[Application Opened Opened]]>
     </line>
-    <line>
-      <![CDATA[Browser Opened]]>
-    </line>
-    <line>
-      <![CDATA[Application]]>
-    </line>
-    <line>
-      <![CDATA[Application Opened Opened]]>
-    </line>
-    <line>
-      <![CDATA[Browser Opened]]>
-    </line>
-    <line>
-      <![CDATA[Application]]>
-    </line>
-    <line>
-      <![CDATA[Application Opened Opened]]>
-    </line>
   </reporter-output>
-  <suite started-at="2020-12-14T16:57:55 PKT" name="Suite" finished-at="2020-12-14T16:58:28 PKT" duration-ms="32924">
+  <suite started-at="2021-02-15T14:54:26 PKT" name="Suite" finished-at="2021-02-15T14:55:24 PKT" duration-ms="58214">
     <groups>
     </groups>
-    <test started-at="2020-12-14T16:57:55 PKT" name="FireFoxTestCase" finished-at="2020-12-14T16:58:28 PKT" duration-ms="32924">
+    <test started-at="2021-02-15T14:54:26 PKT" name="FireFoxTestCase" finished-at="2021-02-15T14:55:24 PKT" duration-ms="58214">
       <class name="AutomationFrameWork.TestCases.TestCase1">
-        <test-method is-config="true" signature="BeforeClass()[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25]" started-at="2020-12-14T16:57:55 PKT" name="BeforeClass" finished-at="2020-12-14T16:57:56 PKT" duration-ms="131" status="PASS">
+        <test-method is-config="true" signature="BeforeClass()[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251]" started-at="2021-02-15T14:54:26 PKT" name="BeforeClass" finished-at="2021-02-15T14:54:26 PKT" duration-ms="249" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeClass -->
-        <test-method is-config="true" signature="BeforeMethod(org.testng.ITestResult)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25]" started-at="2020-12-14T16:57:56 PKT" name="BeforeMethod" finished-at="2020-12-14T16:57:56 PKT" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="BeforeMethod(org.testng.ITestResult)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251]" started-at="2021-02-15T14:54:26 PKT" name="BeforeMethod" finished-at="2021-02-15T14:54:26 PKT" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=TestCase1.TC1(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=TestCase1.TC6(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeMethod -->
-        <test-method signature="TC1(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25]" started-at="2020-12-14T16:57:56 PKT" name="TC1" description="Verify if the save button is enabled" finished-at="2020-12-14T16:58:09 PKT" duration-ms="13300" status="PASS">
+        <test-method signature="TC6(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251]" started-at="2021-02-15T14:54:26 PKT" name="TC6" description="Generate and Pay Voucher fees" finished-at="2021-02-15T14:55:24 PKT" duration-ms="57921" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -68,69 +50,7 @@
               <![CDATA[Application Opened Opened]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC1 -->
-        <test-method signature="TC2(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25]" started-at="2020-12-14T16:58:09 PKT" name="TC2" description="Verify if the save button is disbaled" finished-at="2020-12-14T16:58:16 PKT" duration-ms="6767" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[Browser Opened]]>
-            </line>
-            <line>
-              <![CDATA[Application]]>
-            </line>
-            <line>
-              <![CDATA[Application Opened Opened]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC2 -->
-        <test-method is-config="true" signature="BeforeMethod(org.testng.ITestResult)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25]" started-at="2020-12-14T16:58:09 PKT" name="BeforeMethod" finished-at="2020-12-14T16:58:09 PKT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=TestCase1.TC2(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method is-config="true" signature="BeforeMethod(org.testng.ITestResult)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25]" started-at="2020-12-14T16:58:16 PKT" name="BeforeMethod" finished-at="2020-12-14T16:58:16 PKT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=TestCase1.TC3(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method signature="TC3(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@63a65a25]" started-at="2020-12-14T16:58:16 PKT" name="TC3" description="Select Monday from the week drop down" finished-at="2020-12-14T16:58:28 PKT" duration-ms="12691" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[Browser Opened]]>
-            </line>
-            <line>
-              <![CDATA[Application]]>
-            </line>
-            <line>
-              <![CDATA[Application Opened Opened]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC3 -->
+        </test-method> <!-- TC6 -->
       </class> <!-- AutomationFrameWork.TestCases.TestCase1 -->
     </test> <!-- FireFoxTestCase -->
   </suite> <!-- Suite -->

@@ -5,8 +5,9 @@
     <classes>
       <class name="AutomationFrameWork.TestCases.TestCase1">
         <methods>
-          <include name="TC1"/>
-          <include name="TC2"/>
+          <include name="BeforeClass"/>
+          <include name="TC6"/>
+          <include name="BeforeMethod"/>
         </methods>
       </class> <!-- AutomationFrameWork.TestCases.TestCase1 -->
     </classes>

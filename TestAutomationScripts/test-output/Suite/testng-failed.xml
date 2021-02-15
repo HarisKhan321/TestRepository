@@ -7,8 +7,7 @@
       <class name="AutomationFrameWork.TestCases.TestCase1">
         <methods>
           <include name="BeforeClass"/>
-          <include name="TC3"/>
-          <include name="TC1"/>
+          <include name="TC6" invocation-numbers="0"/>
           <include name="BeforeMethod"/>
         </methods>
       </class> <!-- AutomationFrameWork.TestCases.TestCase1 -->

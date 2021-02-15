@@ -1,7 +1,7 @@
 package AutomationFrameWork.SetupFiles;
 
-import static AutomationFrameWork.SetupFiles.Initilization.logger;
-import static AutomationFrameWork.SetupFiles.Initilization.report;
+//import static AutomationFrameWork.SetupFiles.Initilization.logger;
+//import static AutomationFrameWork.SetupFiles.Initilization.report;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +10,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.NoSuchElementException;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import static io.restassured.RestAssured.given;
+ 
 
 import org.apache.commons.io.FileUtils;
 
@@ -17,13 +24,18 @@ import org.apache.*;
 import org.openqa.selenium.OutputType;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -78,11 +90,6 @@ public static ExtentReports getExtentInstance() {
 	return report;
 }
 
-
-
-
-
-
 // Open Application
 public static void setup()
 {	 
@@ -103,12 +110,17 @@ public static void setup()
 	}
 
 	else if (BrowsersType.equalsIgnoreCase("chrome")) {
+	
 		System.setProperty("webdriver.chrome.driver",
 				"D:\\harisStuff\\TestAutomationStuff\\Automation Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
+		ChromeOptions opt = new ChromeOptions();
+	   opt.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+		driver = new ChromeDriver(opt);
+		//driver = new ChromeDriver();
+		
 		Reporter.log("Browser Opened");
 		logger.log(LogStatus.INFO, "Chrome Browser started ");
-		
+		driver.manage().window().maximize();
 		driver.get(URL);
 		 Reporter.log("Application");
 		logger.log(LogStatus.PASS, "Application Opened");
@@ -187,6 +199,8 @@ public static void enter_Text(String locatorType, String value, String text){
 		By locator;
 		locator = locatorValue(locatorType, value);
 		WebElement element = driver.findElement(locator);
+		// scrolling until the element is visible
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		element.sendKeys(text);
 		
 	} catch (Exception e) {
@@ -214,12 +228,20 @@ public static void enter_Text(String locatorType, String value, String text){
 }
 
 
+public static String  getText(String value)
+{
+	String abc;
+	abc= driver.findElement(By.id(value)).getText();
+	return abc;
+}
 
-public void click_On_Link(String locatorType, String value) {
+public static void click_On_Link(String locatorType, String value) {
 	try {
 		By locator;
 		locator = locatorValue(locatorType, value);
 		WebElement element = driver.findElement(locator);
+		// scrolling until the element is visible
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		element.click();
 	} catch (Exception e) {
 		System.err.format("No Element Found to enter text" + e);
@@ -244,7 +266,10 @@ public static void click_On_Button(String locatorType, String value) {
 		By locator;
 		locator = locatorValue(locatorType, value);
 		WebElement element = driver.findElement(locator);
+		// scrolling until the element is visible
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		element.click();
+		logger.log(LogStatus.PASS, "Successfully Clicked"+ locatorType + "and Value: " +value + logger.addScreenCapture(capture(driver)) );
 	} catch (Exception e) {
 		System.err.format("No Element Found to perform click" + e);
 		logger.log(LogStatus.FAIL, "Locator not found: Locator Type:"+ locatorType + "and Value:" +value);
@@ -331,10 +356,6 @@ public static void select_From_Dd(String locatorType, String value, String Dd_Ty
 	}
 }
 
-public static void maximizeScreen() {
-	
-	driver.manage().window().maximize();
-}
 
 public static String getAppUrl()
 {
@@ -367,6 +388,47 @@ report.flush();
 }
 
 }
+
+public static void UpdatePaymentStatus(String APIUrl, String PSID )
+{   
+ RestAssured.baseURI  = APIUrl; 
+
+	 
+    Response res = given()
+    .contentType("application/json").
+   // body("{\"reserved\":\"PSID20210126024230|1122332|PSW:58400;GST:13600;FE:8000\"}").
+    body("{\r\n"
+    		+ "    \"methodId\": \"1411\",\r\n"
+    		+ "    \"data\": {\r\n"
+    		+ "        \"username\" : \"saad123\",\r\n"
+    		+ "        \"password\" : \"qwe123\",\r\n"
+    		+ "        \"psid\" : \""+PSID+"\",\r\n"
+    		+ "        \"transaction_auth_id\" : \"112233\",\r\n"
+    		+ "        \"transaction_amount\" : \"0000000080000\",\r\n"
+    		+ "        \"tran_time\" : \"120911\",\r\n"
+    		+ "        \"tran_date\" : \"20201208\",\r\n"
+    		+ "        \"bank_mnemonic\" : \"UBL\",\r\n"
+    		+ "        \"reserved\" : \"PSID20210126024932|1122332|PSW:58400;GST:13600;FE:8000;\"\r\n"
+    		+ "    },\r\n"
+    		+ "    \"signature\": \"\",\r\n"
+    		+ "    \"pagination\": {\r\n"
+    		+ "        \"offset\": 10,\r\n"
+    		+ "        \"size\": 10,\r\n"
+    		+ "        \"sortColumn\": \"\",\r\n"
+    		+ "        \"sortOrder\": \"\"\r\n"
+    		+ "    }\r\n"
+    		+ "}"
+    		
+    		). 
+    when().
+       post("");
+
+    String body = res.getBody().asString();
+    System.out.println(body);
+
+
+}
+
 
 }
 
