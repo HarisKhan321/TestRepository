@@ -11,27 +11,27 @@
       <![CDATA[Application Opened Opened]]>
     </line>
   </reporter-output>
-  <suite started-at="2021-02-15T14:54:26 PKT" name="Suite" finished-at="2021-02-15T14:55:24 PKT" duration-ms="58214">
+  <suite started-at="2021-02-16T09:40:36 PKT" name="Suite" finished-at="2021-02-16T09:41:34 PKT" duration-ms="57418">
     <groups>
     </groups>
-    <test started-at="2021-02-15T14:54:26 PKT" name="FireFoxTestCase" finished-at="2021-02-15T14:55:24 PKT" duration-ms="58214">
+    <test started-at="2021-02-16T09:40:36 PKT" name="FireFoxTestCase" finished-at="2021-02-16T09:41:34 PKT" duration-ms="57418">
       <class name="AutomationFrameWork.TestCases.TestCase1">
-        <test-method is-config="true" signature="BeforeClass()[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251]" started-at="2021-02-15T14:54:26 PKT" name="BeforeClass" finished-at="2021-02-15T14:54:26 PKT" duration-ms="249" status="PASS">
+        <test-method is-config="true" signature="BeforeClass()[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5c909414]" started-at="2021-02-16T09:40:36 PKT" name="BeforeClass" finished-at="2021-02-16T09:40:37 PKT" duration-ms="435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeClass -->
-        <test-method is-config="true" signature="BeforeMethod(org.testng.ITestResult)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251]" started-at="2021-02-15T14:54:26 PKT" name="BeforeMethod" finished-at="2021-02-15T14:54:26 PKT" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="BeforeMethod(org.testng.ITestResult)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5c909414]" started-at="2021-02-16T09:40:37 PKT" name="BeforeMethod" finished-at="2021-02-16T09:40:37 PKT" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=TestCase1.TC6(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=TestCase1.TC6(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5c909414] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeMethod -->
-        <test-method signature="TC6(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5cee5251]" started-at="2021-02-15T14:54:26 PKT" name="TC6" description="Generate and Pay Voucher fees" finished-at="2021-02-15T14:55:24 PKT" duration-ms="57921" status="PASS">
+        <test-method signature="TC6(java.lang.String)[pri:0, instance:AutomationFrameWork.TestCases.TestCase1@5c909414]" started-at="2021-02-16T09:40:37 PKT" name="TC6" description="Generate and Pay Voucher fees" finished-at="2021-02-16T09:41:34 PKT" duration-ms="56943" status="PASS">
           <params>
             <param index="0">
               <value>

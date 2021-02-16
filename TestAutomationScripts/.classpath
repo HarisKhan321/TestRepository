@@ -53,5 +53,6 @@
 	<classpathentry kind="lib" path="D:/ImpoSoftwares/rest-assured-4.3.3-dist/docs/rest-assured-common-4.3.3-sources.jar"/>
 	<classpathentry kind="lib" path="D:/ImpoSoftwares/rest-assured-4.3.3-dist/docs/xml-path-4.3.3-javadoc.jar"/>
 	<classpathentry kind="lib" path="D:/ImpoSoftwares/rest-assured-4.3.3-dist/docs/xml-path-4.3.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/ImpoSoftwares/sqljdbc_9.2.0.0_enu/sqljdbc_9.2/enu/mssql-jdbc-9.2.0.jre15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
